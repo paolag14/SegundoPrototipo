@@ -4,29 +4,44 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
+    [SerializeField]
+    private float speed = 8;
+
+    [SerializeField]
     private int score = 1;
-    private Personaje personaje;  
+
+    private Personaje personaje;
+    
 
     void Awake(){
         personaje = GameObject.FindObjectOfType<Personaje>(); 
     }
-    
+
+
     // Start is called before the first frame update
-    void Start(){
-        // destruir bala después de 5 segundos
+    void Start()
+    {
+        //ESTRATEGIA DE DESTRUCCIÓN DE OBJETOS (BALAS)
         Destroy(gameObject, 5);
     }
 
     // Update is called once per frame
-    void Update(){
-        transform.Translate(0, 10 * Time.deltaTime, 0, Space.World); 
+    void Update()
+    {
+        transform.Translate(0, speed * Time.deltaTime, 0);
+        
     }
 
-    void OnTriggerEnter(Collider c){
-        Destroy(c.gameObject); // destruir enemigo 
-        Destroy(gameObject);  // destruir bala
+    void OnCollisionEnter2D(Collision2D c){
+        ContactPoint2D contacto = c.GetContact(0);
+        //Instantiate(explosion, 
+          //  newVector3(contacto.point.x, contacto.point.y, 0),
+            //explosion.transform.rotation);
+        Destroy(c.gameObject);
+        Destroy(gameObject);
 
-        // puntaje - kills
-        personaje.UpdateScore(score); 
+         // puntaje - kills
+        personaje.UpdateScore(score);
     }
+
 }
