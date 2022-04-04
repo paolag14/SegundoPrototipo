@@ -12,8 +12,15 @@ public class Personaje : MonoBehaviour
     private GameObject bala; 
     //public Transform referenciaDePosicion; 
 
+    [SerializeField]
+    private GameObject choque;
+
     public Text scoreText;
+
+    public Text lifeText;
+
     private int currentScore; 
+    private int currentLife = 3; 
 
     //corrutina
     private IEnumerator disparoCorrutina;
@@ -27,6 +34,9 @@ public class Personaje : MonoBehaviour
         scoreText.fontSize = 18;
         scoreText.fontStyle = FontStyle.Italic;
         scoreText.text = "Kills: ";  
+        lifeText.fontSize = 18;
+        lifeText.fontStyle = FontStyle.Italic;
+        lifeText.text = "Life: " + currentLife.ToString();
 
         if(bala == null){
             Debug.LogError("PROYECTIL NO ASIGNADO");
@@ -73,6 +83,15 @@ public class Personaje : MonoBehaviour
         scoreText.text = "Kills: " + currentScore.ToString(); 
     }
 
+    public void UpdateLife(int vida){
+        currentLife -= vida;
+        lifeText.text = "Life: " + currentLife.ToString();
+        if (currentLife <= 0){
+            Destroy(gameObject);
+            lifeText.text = "GAME OVER";
+        }
+    }
+ 
     private IEnumerator Disparo(){
         while(true){
             Instantiate(bala, transform.position, transform.rotation);
@@ -80,4 +99,16 @@ public class Personaje : MonoBehaviour
         }
     }
 
+
+
+    public void OnTriggerEnter2D(Collider2D c){
+        if (c.gameObject.name == "Enemigo(Clone)") {
+            Instantiate(choque, transform.position, transform.rotation);
+            UpdateLife(1);
+        }
+        else{
+            //print(c.gameObject.name);
+        }
+
+    } 
 }

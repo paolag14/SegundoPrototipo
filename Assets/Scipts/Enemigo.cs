@@ -5,8 +5,14 @@ using UnityEngine;
 public class Enemigo : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 0.005f;
+    private float speed = 20f;
 
+
+    private Personaje personaje;
+
+    void Awake(){
+        personaje = GameObject.FindObjectOfType<Personaje>(); 
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -27,4 +33,19 @@ public class Enemigo : MonoBehaviour
             0); 
         //yield return new WaitForSeconds(0.5f);
     }
+
+    
+
+    public void OnColliderEnter2D(Collider2D c){
+        //if (c.gameObject.name == "Protagonista") {
+          //  print("algo pasaaaaaa");
+            //personaje.UpdateLife(1);
+        //}
+        //else{
+            print(c.gameObject.name);
+        //}
+
+    }  
+
+    
 }
