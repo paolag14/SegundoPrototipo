@@ -5,20 +5,26 @@ using UnityEngine;
 public class Enemigo : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 8;
+    private float speed = 0.005f;
 
-    Vector3 movimiento;
     
     // Start is called before the first frame update
     void Start()
     {
+
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        movimiento = new Vector3(Random.Range(-3.5f, 3), Random.Range(1.5f, 3.4f), 0);
-        GetComponent<Rigidbody>().AddForce(movimiento * speed);
+        float horizontal = Random.Range(-4, 4);  
+        float vertical = Random.Range(0, 4); 
+        transform.Translate(
+            horizontal * speed/100 * Time.deltaTime,
+            vertical * speed/100 * Time.deltaTime,
+            0); 
+        //yield return new WaitForSeconds(0.5f);
     }
 }
