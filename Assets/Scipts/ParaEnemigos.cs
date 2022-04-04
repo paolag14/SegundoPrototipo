@@ -11,7 +11,6 @@ public class ParaEnemigos : MonoBehaviour
     private float speed = 16;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,38 +22,19 @@ public class ParaEnemigos : MonoBehaviour
     void Update()
     {
         
-        
     }
 
     private IEnumerator GenerarEnemigo(){
         while(true){
-            float horizontal = Random.Range(-4, 4);  
-            float vertical = Random.Range(1.5f, 3.4f);
             Instantiate(enemigo, new Vector3(Random.Range(-4, 4), 
-                Random.Range(0,4), 0), 
+                Random.Range(2,4), 0), 
                 enemigo.transform.rotation);
             
-
-            
             //esperar tiempo random
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.8f));
+            yield return new WaitForSeconds(Random.Range(0.8f, 2.8f));
 
         }
     }
 
-    private IEnumerator RandomMove(){
-
-    while(true) {
-
-        float horizontal = Random.Range(-4, 4);  
-        float vertical = Random.Range(1.5f, 3.4f); 
-        enemigo.transform.Translate(
-            horizontal * speed * Time.deltaTime,
-            vertical * speed * Time.deltaTime,
-            0); 
-
-        yield return new WaitForSeconds(0.5f);
-        }
-    }
 
 }

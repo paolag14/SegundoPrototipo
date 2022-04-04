@@ -7,45 +7,48 @@ public class Enemigo : MonoBehaviour
     [SerializeField]
     private float speed = 20f;
 
+    [SerializeField]
+    private GameObject balaEnemiga; 
 
-    private Personaje personaje;
+    //corrutina
+    private IEnumerator disparoCorrutina;
 
-    void Awake(){
-        personaje = GameObject.FindObjectOfType<Personaje>(); 
-    }
+    [SerializeField]
+    private float tiempoDisparo = 100;
+
+    [SerializeField]
+    private int cont = 1;
+
+
     
     // Start is called before the first frame update
     void Start()
-    {
-
-        
+    {   
+        disparoCorrutina = Disparo();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Random.Range(-4, 4);  
-        float vertical = Random.Range(0, 4); 
+        float horizontal = Random.Range(-10, 10);  
+        float vertical = Random.Range(0, 10); 
         transform.Translate(
             horizontal * speed/100 * Time.deltaTime,
             vertical * speed/100 * Time.deltaTime,
-            0); 
-        //yield return new WaitForSeconds(0.5f);
+            0);
+
+        //StartCoroutine(disparoCorrutina);
+        //ayuda, no sirveeeeeeeeeeeeeeee
+        
     }
 
-    
 
-    public void OnColliderEnter2D(Collider2D c){
-        //if (c.gameObject.name == "Protagonista") {
-          //  print("algo pasaaaaaa");
-            //personaje.UpdateLife(1);
-        //}
-        //else{
-            print(c.gameObject.name);
-        //}
-
-    }  
-
+    private IEnumerator Disparo(){
+        while(true){
+            Instantiate(balaEnemiga, transform.position, transform.rotation);
+            yield return new WaitForSeconds(tiempoDisparo);
+        }
+    }
     
 }

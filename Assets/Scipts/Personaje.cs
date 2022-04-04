@@ -89,6 +89,7 @@ public class Personaje : MonoBehaviour
         if (currentLife <= 0){
             Destroy(gameObject);
             lifeText.text = "GAME OVER";
+            
         }
     }
  

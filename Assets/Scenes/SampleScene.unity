@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -31, y: 15}
+  m_AnchoredPosition: {x: -67, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295581202
@@ -538,6 +538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9.77
+  balaEnemiga: {fileID: 7976764279060422082, guid: bb6097d44efb60e48b8242ad7ae1b942, type: 3}
+  tiempoDisparo: 1
+  cont: 1
 --- !u!50 &1929733497
 Rigidbody2D:
   serializedVersion: 4
@@ -717,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337132, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.9
+      value: -6.787
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337132, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_LocalPosition.y
@@ -757,11 +760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337134, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_Size.x
-      value: 0.22392264
+      value: 0.17991316
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337134, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_Size.y
-      value: 0.18969941
+      value: 0.15358697
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337134, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_Enabled
@@ -769,11 +772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337134, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_Offset.x
-      value: 0.0017791577
+      value: 0.0059705377
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337134, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_Offset.y
-      value: 0.000000059604645
+      value: -0.002256997
       objectReference: {fileID: 0}
     - target: {fileID: 5461402194242337134, guid: 35c48131258775640bab794a46e79681, type: 3}
       propertyPath: m_IsTrigger

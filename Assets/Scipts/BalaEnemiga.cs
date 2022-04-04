@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bala : MonoBehaviour
+public class BalaEnemiga : MonoBehaviour
 {
     [SerializeField]
     private float speed = 8;
-
-    [SerializeField]
-    private int score = 1;
 
     private Personaje personaje;
 
@@ -20,11 +17,9 @@ public class Bala : MonoBehaviour
         personaje = GameObject.FindObjectOfType<Personaje>(); 
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
-        //ESTRATEGIA DE DESTRUCCIÓN DE OBJETOS (BALAS)
         Destroy(gameObject, 5);
     }
 
@@ -32,18 +27,14 @@ public class Bala : MonoBehaviour
     void Update()
     {
         transform.Translate(0, speed * Time.deltaTime, 0);
-        
     }
 
     void OnCollisionEnter2D(Collision2D c){
-        ContactPoint2D contacto = c.GetContact(0);
-        Instantiate(explosion, transform.position, transform.rotation);
-        Destroy(c.gameObject);
-        Destroy(gameObject);
+        //Instantiate(explosion, transform.position, transform.rotation);
+        //Destroy(gameObject);
 
-
-         // puntaje - kills
-        personaje.UpdateScore(score);
+         // life
+        //personaje.UpdateLife(1);
+        print("que tocaaa " + c.gameObject.name);
     }
-
 }
