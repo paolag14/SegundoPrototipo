@@ -27,6 +27,11 @@ public class Personaje : MonoBehaviour
 
     [SerializeField]
     private float tiempoDisparo = 1;
+
+    public Text levelText;
+    
+    [SerializeField]
+    public float nivel = 1;
     
     
     // Start is called before the first frame update
@@ -34,9 +39,14 @@ public class Personaje : MonoBehaviour
         scoreText.fontSize = 18;
         scoreText.fontStyle = FontStyle.Italic;
         scoreText.text = "Kills: ";  
+
         lifeText.fontSize = 18;
         lifeText.fontStyle = FontStyle.Italic;
         lifeText.text = "Life: " + currentLife.ToString();
+
+        levelText.fontSize = 18;
+        levelText.fontStyle = FontStyle.Italic;
+        levelText.text = "Level: " + nivel.ToString();  
 
         if(bala == null){
             Debug.LogError("PROYECTIL NO ASIGNADO");
@@ -81,6 +91,14 @@ public class Personaje : MonoBehaviour
     public void UpdateScore(int score){
         currentScore += score; 
         scoreText.text = "Kills: " + currentScore.ToString(); 
+        //nivel 2
+        if (currentScore == 5){
+            UpdateLevel(1);
+        }
+        //nivel 3
+        if (currentScore == 15){
+            UpdateLevel(1);
+        }
     }
 
     public void UpdateLife(int vida){
@@ -89,8 +107,15 @@ public class Personaje : MonoBehaviour
         if (currentLife <= 0){
             Destroy(gameObject);
             lifeText.text = "GAME OVER";
+            levelText.text = "GAME OVER";
+            scoreText.text = "GAME OVER";
             
         }
+    }
+
+    public void UpdateLevel(int level){
+        nivel += level;
+        levelText.text = "Level: " + nivel.ToString(); 
     }
  
     private IEnumerator Disparo(){
