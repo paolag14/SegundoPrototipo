@@ -125,15 +125,13 @@ public class Personaje : MonoBehaviour
         }
     }
 
-
-
     public void OnTriggerEnter2D(Collider2D c){
         if (c.gameObject.name == "Enemigo(Clone)") {
             Instantiate(choque, transform.position, transform.rotation);
             UpdateLife(1);
         }
         else{
-            //print(c.gameObject.name);
+            print(c.gameObject.name);
         }
 
     } 

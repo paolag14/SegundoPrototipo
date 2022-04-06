@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5461402194242337135}
   - component: {fileID: 5461402194242337134}
   - component: {fileID: 7440779630324136481}
+  - component: {fileID: 8696707589921246819}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Untagged
@@ -126,3 +127,24 @@ MonoBehaviour:
   balaEnemiga: {fileID: 7976764279060422082, guid: bb6097d44efb60e48b8242ad7ae1b942, type: 3}
   tiempoDisparo: 100
   cont: 1
+--- !u!50 &8696707589921246819
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461402194242337137}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
