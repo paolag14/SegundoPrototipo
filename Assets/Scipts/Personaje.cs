@@ -130,9 +130,6 @@ public class Personaje : MonoBehaviour
             Instantiate(choque, transform.position, transform.rotation);
             UpdateLife(1);
         }
-        else{
-            print(c.gameObject.name);
-        }
 
     } 
 }
