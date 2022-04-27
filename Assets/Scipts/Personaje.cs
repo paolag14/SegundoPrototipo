@@ -32,6 +32,9 @@ public class Personaje : MonoBehaviour
     
     [SerializeField]
     public float nivel = 1;
+
+    SoundManager sonidos;
+
     
     
     // Start is called before the first frame update
@@ -52,6 +55,9 @@ public class Personaje : MonoBehaviour
             Debug.LogError("PROYECTIL NO ASIGNADO");
             throw new System.Exception("PROYECTIL NO ASIGNADO");
         }
+
+        
+        sonidos = GameObject.FindObjectOfType<SoundManager>(); 
 
         disparoCorrutina = Disparo();
     } 
@@ -80,6 +86,10 @@ public class Personaje : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space)){
             StartCoroutine(disparoCorrutina);
+            sonidos.sonidoBalaJugador();
+
+        
+            
         }
 
         if(Input.GetKeyUp(KeyCode.Space)){
@@ -121,6 +131,7 @@ public class Personaje : MonoBehaviour
     private IEnumerator Disparo(){
         while(true){
             Instantiate(bala, transform.position, transform.rotation);
+            
             yield return new WaitForSeconds(tiempoDisparo);
         }
     }
