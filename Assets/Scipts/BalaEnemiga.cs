@@ -5,7 +5,7 @@ using UnityEngine;
 public class BalaEnemiga : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 8;
+    private float speed = 6;
 
     private Personaje personaje;
 
@@ -26,15 +26,24 @@ public class BalaEnemiga : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, speed * Time.deltaTime, 0);
+        //transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
+        transform.Translate(Vector3.down * Time.deltaTime * speed, Space.World);
     }
 
     void OnCollisionEnter2D(Collision2D c){
+        /*
+        ContactPoint2D contacto = c.GetContact(0);
+        Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(c.gameObject);
+        Destroy(gameObject);
+        sonidos.sonidoExplosion();
+        */
+
         //Instantiate(explosion, transform.position, transform.rotation);
         //Destroy(gameObject);
 
          // life
         //personaje.UpdateLife(1);
-        print("que tocaaa " + c.gameObject.name);
+        //print("que tocaaa " + c.gameObject.name);
     }
 }

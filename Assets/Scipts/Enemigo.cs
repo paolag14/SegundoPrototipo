@@ -19,12 +19,20 @@ public class Enemigo : MonoBehaviour
     [SerializeField]
     private int cont = 1;
 
+    private float fireRate = 0.01f;
+    private float nextFire = 5;
+
+    SoundManager sonidos;
+
 
     
     // Start is called before the first frame update
     void Start()
     {   
+        sonidos = GameObject.FindObjectOfType<SoundManager>(); 
+
         disparoCorrutina = Disparo();
+        Disparando();
         
     }
 
@@ -38,16 +46,30 @@ public class Enemigo : MonoBehaviour
             vertical * speed/100 * Time.deltaTime,
             0);
 
+
         //StartCoroutine(disparoCorrutina);
         //ayuda, no sirveeeeeeeeeeeeeeee
         
+        
+        
+    }
+
+    private void Disparando() {
+        if (Time.time> nextFire){
+            nextFire = Time.time + fireRate;
+        }
+
+        Instantiate(balaEnemiga, transform.position, Quaternion.Euler(0,0,0));
+        sonidos.sonidoBalaEnemigo();
+        //algo.AddRelativeForce(Vector3.forward*3);
+        //algo.transform.Translate(0, 2 * Time.deltaTime, 0);
     }
 
 
     private IEnumerator Disparo(){
         while(true){
             Instantiate(balaEnemiga, transform.position, transform.rotation);
-            yield return new WaitForSeconds(tiempoDisparo);
+            yield return new WaitForSeconds(5);
         }
     }
     

@@ -13,15 +13,8 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //sonidoBalaJugador();
-
 
         player = GetComponent<AudioSource>();
-
-        print(clips.Length);
-        //pistalActual = 0;
-
-        //player.clip = clips[0];
 
     }
 
@@ -68,6 +61,10 @@ public class SoundManager : MonoBehaviour
     }
 
     public void sonidoExplosion(){
-        player.PlayOneShot(clipsSecond[1]);
+        player.PlayOneShot(clips[4]);
+    }
+
+    public void sonidoBalaEnemigo(){
+        player.PlayOneShot(clips[5]);
     }
 }
