@@ -14,6 +14,8 @@ public class Bala : MonoBehaviour
 
     [SerializeField]
     private GameObject explosion;
+
+    SoundManager sonidos;
     
 
     void Awake(){
@@ -26,6 +28,7 @@ public class Bala : MonoBehaviour
     {
         //ESTRATEGIA DE DESTRUCCIÓN DE OBJETOS (BALAS)
         Destroy(gameObject, 5);
+        sonidos = GameObject.FindObjectOfType<SoundManager>(); 
     }
 
     // Update is called once per frame
@@ -40,6 +43,7 @@ public class Bala : MonoBehaviour
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(c.gameObject);
         Destroy(gameObject);
+        sonidos.sonidoExplosion();
 
 
          // puntaje - kills

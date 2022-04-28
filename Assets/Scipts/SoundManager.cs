@@ -7,14 +7,18 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField]
     public AudioClip[] clips;
+    public AudioClip[] clipsSecond;
     public AudioSource player;
-    private int pistalActual;
+    //private int pistalActual;
     // Start is called before the first frame update
     void Start()
     {
-        sonidoBalaJugador();
+        //sonidoBalaJugador();
+
 
         player = GetComponent<AudioSource>();
+
+        print(clips.Length);
         //pistalActual = 0;
 
         //player.clip = clips[0];
@@ -49,5 +53,21 @@ public class SoundManager : MonoBehaviour
     
     public void sonidoBalaJugador(){
         player.PlayOneShot(clips[0]);
+    }
+
+    public void sonidoMenosVida(){
+        player.PlayOneShot(clips[1]);
+    }
+
+    public void sonidoNivel(){
+        player.PlayOneShot(clips[2]);
+    }
+
+    public void sonidoChoque(){
+        player.PlayOneShot(clips[3]);
+    }
+
+    public void sonidoExplosion(){
+        player.PlayOneShot(clipsSecond[1]);
     }
 }

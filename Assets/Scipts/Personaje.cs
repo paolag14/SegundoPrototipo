@@ -87,8 +87,6 @@ public class Personaje : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             StartCoroutine(disparoCorrutina);
             sonidos.sonidoBalaJugador();
-
-        
             
         }
 
@@ -114,7 +112,11 @@ public class Personaje : MonoBehaviour
     public void UpdateLife(int vida){
         currentLife -= vida;
         lifeText.text = "Life: " + currentLife.ToString();
+
+        sonidos.sonidoMenosVida();
+
         if (currentLife <= 0){
+            //sonidos.sonidoExplosion();
             Destroy(gameObject);
             lifeText.text = "GAME OVER";
             levelText.text = "GAME OVER";
@@ -125,7 +127,8 @@ public class Personaje : MonoBehaviour
 
     public void UpdateLevel(int level){
         nivel += level;
-        levelText.text = "Level: " + nivel.ToString(); 
+        levelText.text = "Level: " + nivel.ToString();
+        sonidos.sonidoNivel(); 
     }
  
     private IEnumerator Disparo(){
