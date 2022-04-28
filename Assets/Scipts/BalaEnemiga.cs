@@ -32,11 +32,16 @@ public class BalaEnemiga : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c){
         /*
-        ContactPoint2D contacto = c.GetContact(0);
+        //ContactPoint2D contacto = c.GetContact(0);
+        if (c.gameObject.name!="Enemigo(Clone)"){
+            print("ahuevo");
+        }
+        else {
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(c.gameObject);
         Destroy(gameObject);
-        sonidos.sonidoExplosion();
+        }
+        //sonidos.sonidoExplosion();
         */
 
         //Instantiate(explosion, transform.position, transform.rotation);
@@ -44,6 +49,18 @@ public class BalaEnemiga : MonoBehaviour
 
          // life
         //personaje.UpdateLife(1);
+        print("que tocaaa " + c.gameObject.name);
+        if (c.gameObject.name == "Protagonista"){
+            print ("ahuevo, mlp");
+        }
+        
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit){
+        print(hit.gameObject.name);
+    }
+
+    void OnCollisionExit2D(Collision2D c){
         //print("que tocaaa " + c.gameObject.name);
     }
 }

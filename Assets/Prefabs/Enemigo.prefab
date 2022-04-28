@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5461402194242337134}
   - component: {fileID: 7440779630324136481}
   - component: {fileID: 8696707589921246819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5461402194242337137}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -3.46, y: 3.98, z: 0}
-  m_LocalScale: {x: 7.4292493, y: 6.898176, z: 1}
+  m_LocalPosition: {x: -3.6688, y: 3.7768, z: 0}
+  m_LocalScale: {x: 6.12393, y: 5.628222, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00092161447, y: -0.006016597}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.18913288, y: 0.13147938}
   m_EdgeRadius: 0
 --- !u!114 &7440779630324136481
 MonoBehaviour:

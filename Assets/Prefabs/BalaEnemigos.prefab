@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8877256685600673885}
   - component: {fileID: 4660932286921835244}
   - component: {fileID: 987680860415146257}
-  - component: {fileID: 4850101453275814004}
   - component: {fileID: 979144752705079781}
-  m_Layer: 0
+  - component: {fileID: -945629591678148856}
+  m_Layer: 7
   m_Name: BalaEnemigos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,32 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &4850101453275814004
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4715138629717390740}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &979144752705079781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,3 +120,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   explosion: {fileID: 3245839658475185687, guid: 525a8488042916349b4cb3f7e06ee171, type: 3}
+--- !u!58 &-945629591678148856
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4715138629717390740}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

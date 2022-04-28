@@ -41,14 +41,17 @@ public class Personaje : MonoBehaviour
     void Start(){
         scoreText.fontSize = 18;
         scoreText.fontStyle = FontStyle.Italic;
+        scoreText.color = Color.white;
         scoreText.text = "Kills: ";  
 
         lifeText.fontSize = 18;
         lifeText.fontStyle = FontStyle.Italic;
+        lifeText.color = Color.white;
         lifeText.text = "Life: " + currentLife.ToString();
 
         levelText.fontSize = 18;
         levelText.fontStyle = FontStyle.Italic;
+        levelText.color = Color.white;
         levelText.text = "Level: " + nivel.ToString();  
 
         if(bala == null){
@@ -149,4 +152,6 @@ public class Personaje : MonoBehaviour
         }
 
     } 
+
+    
 }
