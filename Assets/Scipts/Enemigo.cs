@@ -50,8 +50,6 @@ public class Enemigo : MonoBehaviour
         //StartCoroutine(disparoCorrutina);
         //ayuda, no sirveeeeeeeeeeeeeeee
         
-        
-        
     }
 
     private void Disparando() {

@@ -234,11 +234,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: d65f52d1efce81040affe1fbc37d8b1f, type: 3}
-  - {fileID: 8300000, guid: d9ed4c43ef4e3464d9fbe042e7cf6a9a, type: 3}
+  - {fileID: 8300000, guid: 650ba03bd76b65742937742d2cc37978, type: 3}
   - {fileID: 8300000, guid: 1e1a175c5e4af8f4a88380bde7abb157, type: 3}
   - {fileID: 8300000, guid: 3404b71ff02bba6449253e8298c40f24, type: 3}
   - {fileID: 8300000, guid: c813e2b00412b89419c48c0843736304, type: 3}
   - {fileID: 8300000, guid: f65d31e75e923504bac716aff3cbb2a3, type: 3}
+  - {fileID: 8300000, guid: ace7cd09464089a46836775bf2b5409b, type: 3}
   clipsSecond:
   - {fileID: 8300000, guid: 3404b71ff02bba6449253e8298c40f24, type: 3}
   - {fileID: 8300000, guid: c813e2b00412b89419c48c0843736304, type: 3}
@@ -253,11 +254,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d65f52d1efce81040affe1fbc37d8b1f, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: d3ca76c553f3496449ead55ac7caf401, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.444
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

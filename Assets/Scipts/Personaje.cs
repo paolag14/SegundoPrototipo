@@ -60,6 +60,8 @@ public class Personaje : MonoBehaviour
         sonidos = GameObject.FindObjectOfType<SoundManager>(); 
 
         disparoCorrutina = Disparo();
+
+        
     } 
 
     // Update is called once per frame
@@ -121,6 +123,7 @@ public class Personaje : MonoBehaviour
             lifeText.text = "GAME OVER";
             levelText.text = "GAME OVER";
             scoreText.text = "GAME OVER";
+            sonidos.sonidoGameOver();
             
         }
     }

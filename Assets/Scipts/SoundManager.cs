@@ -57,7 +57,7 @@ public class SoundManager : MonoBehaviour
     }
 
     public void sonidoChoque(){
-        player.PlayOneShot(clips[3]);
+        player.PlayOneShot(clips[3], 3F);
     }
 
     public void sonidoExplosion(){
@@ -67,4 +67,11 @@ public class SoundManager : MonoBehaviour
     public void sonidoBalaEnemigo(){
         player.PlayOneShot(clips[5]);
     }
+
+    public void sonidoGameOver(){
+        player.PlayOneShot(clips[6]);
+    }
+
+    
+
 }
