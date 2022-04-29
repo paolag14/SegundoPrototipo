@@ -9,12 +9,12 @@ public class ParaEnemigos : MonoBehaviour
 
     public GameObject enemigo;
 
-    [SerializeField]
-    private float speed = 16;
+    //[SerializeField]
+    //private float speed = 16;
 
     //public Text levelText;
-    [SerializeField]
-    private float nivel = 1;
+    //[SerializeField]
+    //private float nivel = 1;
 
 
     private Personaje personaje;

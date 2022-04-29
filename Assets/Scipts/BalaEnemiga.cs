@@ -49,7 +49,7 @@ public class BalaEnemiga : MonoBehaviour
 
          // life
         //personaje.UpdateLife(1);
-        print("que tocaaa " + c.gameObject.name);
+        //print("que tocaaa " + c.gameObject.name);
         if (c.gameObject.name == "Protagonista"){
             print ("ahuevo, mlp");
         }

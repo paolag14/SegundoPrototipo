@@ -35,22 +35,24 @@ public class Personaje : MonoBehaviour
 
     SoundManager sonidos;
 
+    PowerUps powers;
+
     
     
     // Start is called before the first frame update
     void Start(){
         scoreText.fontSize = 18;
-        scoreText.fontStyle = FontStyle.Italic;
+        scoreText.fontStyle = FontStyle.Bold;
         scoreText.color = Color.white;
         scoreText.text = "Kills: ";  
 
         lifeText.fontSize = 18;
-        lifeText.fontStyle = FontStyle.Italic;
+        lifeText.fontStyle = FontStyle.Bold;
         lifeText.color = Color.white;
         lifeText.text = "Life: " + currentLife.ToString();
 
         levelText.fontSize = 18;
-        levelText.fontStyle = FontStyle.Italic;
+        levelText.fontStyle = FontStyle.Bold;
         levelText.color = Color.white;
         levelText.text = "Level: " + nivel.ToString();  
 
@@ -61,6 +63,8 @@ public class Personaje : MonoBehaviour
 
         
         sonidos = GameObject.FindObjectOfType<SoundManager>(); 
+
+        powers = GameObject.FindObjectOfType<PowerUps>(); 
 
         disparoCorrutina = Disparo();
 
@@ -89,6 +93,8 @@ public class Personaje : MonoBehaviour
         }
         */
 
+        lifeText.text = "Life: " + currentLife.ToString();
+
         if(Input.GetKeyDown(KeyCode.Space)){
             StartCoroutine(disparoCorrutina);
             sonidos.sonidoBalaJugador();
@@ -107,10 +113,13 @@ public class Personaje : MonoBehaviour
         //nivel 2
         if (currentScore == 5){
             UpdateLevel(1);
+            powers.generaVida();
+            
         }
         //nivel 3
         if (currentScore == 15){
             UpdateLevel(1);
+            //powers.generaVida();
         }
     }
 
@@ -146,9 +155,18 @@ public class Personaje : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D c){
+        
         if (c.gameObject.name == "Enemigo(Clone)" || c.gameObject.name == "BalaEnemigos(Clone)") {
             Instantiate(choque, transform.position, transform.rotation);
             UpdateLife(1);
+        }
+
+        else if (c.gameObject.name == "vida(Clone)"){
+            currentLife += 1;
+            sonidos.sonidoGanaVida();
+            //print("toca: " + c.gameObject.name);
+            Destroy(c.gameObject);
+            
         }
 
     } 

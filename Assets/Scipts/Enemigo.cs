@@ -13,11 +13,11 @@ public class Enemigo : MonoBehaviour
     //corrutina
     private IEnumerator disparoCorrutina;
 
-    [SerializeField]
-    private float tiempoDisparo = 100;
+    //[SerializeField]
+    //private float tiempoDisparo = 100;
 
-    [SerializeField]
-    private int cont = 1;
+    //[SerializeField]
+    //private int cont = 1;
 
     private float fireRate = 0.01f;
     private float nextFire = 5;
@@ -29,6 +29,7 @@ public class Enemigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        Destroy(gameObject, 20);
         sonidos = GameObject.FindObjectOfType<SoundManager>(); 
 
         disparoCorrutina = Disparo();

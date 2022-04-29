@@ -40,14 +40,17 @@ public class Bala : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c){
         ContactPoint2D contacto = c.GetContact(0);
-        Instantiate(explosion, transform.position, transform.rotation);
-        Destroy(c.gameObject);
-        Destroy(gameObject);
-        sonidos.sonidoExplosion();
+        if (c.gameObject.name != "vida(Clone)"){
+
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(c.gameObject);
+            Destroy(gameObject);
+            sonidos.sonidoExplosion();
 
 
          // puntaje - kills
-        personaje.UpdateScore(score);
+            personaje.UpdateScore(score);
+        }
 
     }
 
