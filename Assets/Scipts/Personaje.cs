@@ -146,7 +146,7 @@ public class Personaje : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D c){
-        if (c.gameObject.name == "Enemigo(Clone)") {
+        if (c.gameObject.name == "Enemigo(Clone)" || c.gameObject.name == "BalaEnemigos(Clone)") {
             Instantiate(choque, transform.position, transform.rotation);
             UpdateLife(1);
         }

@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 397128875}
   - component: {fileID: 397128876}
   - component: {fileID: 397128880}
+  - component: {fileID: 397128881}
   m_Layer: 8
   m_Name: Protagonista
   m_TagString: Untagged
@@ -682,6 +683,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &397128881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397128874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5d24c557a1a094e98a6e4e66df1048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 876539084}
 --- !u!1 &611439232
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +742,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &876539084 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8004592053155736913, guid: 50186780daca5c44199f48c977d619d6, type: 3}
+  m_PrefabInstance: {fileID: 8004592053263963438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263291586
 GameObject:
   m_ObjectHideFlags: 0
