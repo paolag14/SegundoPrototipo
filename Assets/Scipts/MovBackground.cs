@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovBackground : MonoBehaviour {
-
+    public Camera MainCamera;
     private Transform cameraTransform;
     private Vector3 lastCameraPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        cameraTransform = Camera.main.transform;
+        cameraTransform = MainCamera.transform;
         lastCameraPos = cameraTransform.position;
         
     }

@@ -40,7 +40,7 @@ public class PowerUps : MonoBehaviour
                 Random.Range(-0.8f, 4.2f), 0), 
                 transform.rotation);
             Destroy(corazonClon, 4);
-            yield return new WaitForSeconds(15);
+            yield return new WaitForSeconds(Random.Range(8, 15));
         }
     }
 }
