@@ -36,11 +36,11 @@ public class PowerUps : MonoBehaviour
 
     private IEnumerator generaCorazones(){
         while(true){
-            var corazonClon = Instantiate(vidaP, new Vector3(Random.Range(-7.3f, 7.2f), 
-                Random.Range(-0.8f, 4.2f), 0), 
+            var corazonClon = Instantiate(vidaP, new Vector3(Random.Range(-6.8f, 6.8f), 
+                Random.Range(-3.6f, 3.3f), 0), 
                 transform.rotation);
-            Destroy(corazonClon, 4);
-            yield return new WaitForSeconds(Random.Range(8, 15));
+            Destroy(corazonClon, 5);
+            yield return new WaitForSeconds(Random.Range(6, 12.5f));
         }
     }
 }

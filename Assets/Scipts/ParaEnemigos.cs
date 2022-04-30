@@ -21,6 +21,7 @@ public class ParaEnemigos : MonoBehaviour
 
     private Personaje personaje;
 
+
     void Awake(){
         personaje = GameObject.FindObjectOfType<Personaje>(); 
     }
@@ -28,13 +29,15 @@ public class ParaEnemigos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-
         if (personaje.nivel == 1){
             StartCoroutine(GenerarEnemigo());
         }
-        else if (personaje.nivel == 2){
+        
+        //no sirven estos
+        if (personaje.nivel == 2){
             StopCoroutine(GenerarEnemigo());
             StartCoroutine(GenerarEnemigo2());
+            print("estoy en el 2");
         }
         else if (personaje.nivel == 3){
             StopCoroutine(GenerarEnemigo());
@@ -42,12 +45,12 @@ public class ParaEnemigos : MonoBehaviour
             StartCoroutine(GenerarEnemigo3());
             StartCoroutine(GenerarOtroEnemigo());
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private IEnumerator GenerarEnemigo(){
@@ -57,7 +60,7 @@ public class ParaEnemigos : MonoBehaviour
                 enemigo.transform.rotation);
             
             //esperar tiempo random
-            yield return new WaitForSeconds(Random.Range(0.8f, 2.8f));
+            yield return new WaitForSeconds(Random.Range(1.0f, 3.0f));
 
         }
     }
@@ -69,7 +72,7 @@ public class ParaEnemigos : MonoBehaviour
                 enemigo.transform.rotation);
             
             //esperar tiempo random
-            yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+            yield return new WaitForSeconds(Random.Range(0.9f, 2.9f));
 
         }
     }
@@ -93,9 +96,26 @@ public class ParaEnemigos : MonoBehaviour
                 enemigo.transform.rotation);
             
             //esperar tiempo random
-            yield return new WaitForSeconds(Random.Range(0.8f, 2.8f));
+            yield return new WaitForSeconds(Random.Range(1.2f, 3.5f));
 
         }
+    }
+
+    public void empiezaOtroEnemigo(){
+        StartCoroutine(GenerarOtroEnemigo());
+    }
+
+    public void empiezaNivel2(){
+        //StopCoroutine(GenerarEnemigo());
+        //StartCoroutine(GenerarEnemigo2());
+        //print("si empiezoooo");
+    }
+
+    public void empiezaNivel3(){
+        //StopCoroutine(GenerarEnemigo2());
+        //StartCoroutine(GenerarEnemigo());
+        StartCoroutine(GenerarOtroEnemigo());
+        //print ("amonos al 3");
     }
 
 

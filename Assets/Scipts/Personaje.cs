@@ -37,6 +37,8 @@ public class Personaje : MonoBehaviour
 
     PowerUps powers;
 
+    ParaEnemigos enemigoDif;
+
     
     
     // Start is called before the first frame update
@@ -65,6 +67,8 @@ public class Personaje : MonoBehaviour
         sonidos = GameObject.FindObjectOfType<SoundManager>(); 
 
         powers = GameObject.FindObjectOfType<PowerUps>(); 
+
+        enemigoDif = GameObject.FindObjectOfType<ParaEnemigos>(); 
 
         disparoCorrutina = Disparo();
 
@@ -114,12 +118,15 @@ public class Personaje : MonoBehaviour
         if (currentScore == 5){
             UpdateLevel(1);
             powers.generaVida();
+            //enemigoDif.empiezaNivel2();
+            
             
         }
         //nivel 3
         if (currentScore == 15){
             UpdateLevel(1);
             //powers.generaVida();
+            enemigoDif.empiezaNivel3();
         }
     }
 
