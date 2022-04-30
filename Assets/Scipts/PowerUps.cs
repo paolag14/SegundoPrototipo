@@ -50,7 +50,7 @@ public class PowerUps : MonoBehaviour
                 Random.Range(-3.6f, 3.3f), 0), 
                 transform.rotation);
             Destroy(escudoClon, 5);
-            yield return new WaitForSeconds(Random.Range(5.2f, 12f));
+            yield return new WaitForSeconds(Random.Range(7f, 12f));
         }
     }
 }
