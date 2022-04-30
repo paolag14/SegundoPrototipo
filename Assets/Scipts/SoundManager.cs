@@ -80,6 +80,10 @@ public class SoundManager : MonoBehaviour
         player.PlayOneShot(clips[8]);
     }
 
+    public void sonidoEscudo(){
+        player.PlayOneShot(clips[9], 1F);
+    }
+
     
 
 }

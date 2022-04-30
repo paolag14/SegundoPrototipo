@@ -29,6 +29,7 @@ public class ParaEnemigos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        /*
         if (personaje.nivel == 1){
             StartCoroutine(GenerarEnemigo());
         }
@@ -45,6 +46,9 @@ public class ParaEnemigos : MonoBehaviour
             StartCoroutine(GenerarEnemigo3());
             StartCoroutine(GenerarOtroEnemigo());
         }
+        */
+        StartCoroutine(GenerarEnemigo());
+        
 
     }
 
@@ -101,9 +105,6 @@ public class ParaEnemigos : MonoBehaviour
         }
     }
 
-    public void empiezaOtroEnemigo(){
-        StartCoroutine(GenerarOtroEnemigo());
-    }
 
     public void empiezaNivel2(){
         //StopCoroutine(GenerarEnemigo());

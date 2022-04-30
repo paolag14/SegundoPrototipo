@@ -24,7 +24,7 @@ public class PowerUps : MonoBehaviour
     }
 
     public void generaEscudo(){
-        Instantiate(escudo, transform.position, transform.rotation);
+        StartCoroutine(generaEscudos());
     }
 
     public void generaVida(){
@@ -40,7 +40,17 @@ public class PowerUps : MonoBehaviour
                 Random.Range(-3.6f, 3.3f), 0), 
                 transform.rotation);
             Destroy(corazonClon, 5);
-            yield return new WaitForSeconds(Random.Range(6, 12.5f));
+            yield return new WaitForSeconds(Random.Range(4, 11.5f));
+        }
+    }
+
+    private IEnumerator generaEscudos(){
+        while(true){
+            var escudoClon = Instantiate(escudo, new Vector3(Random.Range(-6.8f, 6.8f), 
+                Random.Range(-3.6f, 3.3f), 0), 
+                transform.rotation);
+            Destroy(escudoClon, 5);
+            yield return new WaitForSeconds(Random.Range(5.2f, 12f));
         }
     }
 }

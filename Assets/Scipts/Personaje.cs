@@ -33,11 +33,14 @@ public class Personaje : MonoBehaviour
     [SerializeField]
     public float nivel = 1;
 
+    [SerializeField]
+    public bool proteccion = false;
+
     SoundManager sonidos;
 
     PowerUps powers;
 
-    ParaEnemigos enemigoDif;
+    ParaEnemigos enemigos;
 
     
     
@@ -68,7 +71,7 @@ public class Personaje : MonoBehaviour
 
         powers = GameObject.FindObjectOfType<PowerUps>(); 
 
-        enemigoDif = GameObject.FindObjectOfType<ParaEnemigos>(); 
+        enemigos = GameObject.FindObjectOfType<ParaEnemigos>(); 
 
         disparoCorrutina = Disparo();
 
@@ -118,7 +121,8 @@ public class Personaje : MonoBehaviour
         if (currentScore == 5){
             UpdateLevel(1);
             powers.generaVida();
-            //enemigoDif.empiezaNivel2();
+            powers.generaEscudo();
+            enemigos.empiezaNivel2();
             
             
         }
@@ -126,7 +130,7 @@ public class Personaje : MonoBehaviour
         if (currentScore == 15){
             UpdateLevel(1);
             //powers.generaVida();
-            enemigoDif.empiezaNivel3();
+            enemigos.empiezaNivel3();
         }
     }
 
@@ -150,6 +154,8 @@ public class Personaje : MonoBehaviour
     public void UpdateLevel(int level){
         nivel += level;
         levelText.text = "Level: " + nivel.ToString();
+        levelText.fontSize++;
+        levelText.fontSize++;
         sonidos.sonidoNivel(); 
     }
  
@@ -160,6 +166,8 @@ public class Personaje : MonoBehaviour
             yield return new WaitForSeconds(tiempoDisparo);
         }
     }
+
+
 
     public void OnTriggerEnter2D(Collider2D c){
         
@@ -174,7 +182,12 @@ public class Personaje : MonoBehaviour
             sonidos.sonidoGanaVida();
             //print("toca: " + c.gameObject.name);
             Destroy(c.gameObject);
-            
+        }
+
+        else if (c.gameObject.name == "escudo(Clone)"){
+            //llamar al otro script
+            sonidos.sonidoEscudo();
+            Destroy(c.gameObject);
         }
 
     } 
