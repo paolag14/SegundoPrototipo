@@ -76,6 +76,10 @@ public class SoundManager : MonoBehaviour
         player.PlayOneShot(clips[7]);
     }
 
+    public void sonidoOtraBala(){
+        player.PlayOneShot(clips[8]);
+    }
+
     
 
 }

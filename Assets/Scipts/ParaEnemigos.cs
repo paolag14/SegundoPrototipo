@@ -9,6 +9,8 @@ public class ParaEnemigos : MonoBehaviour
 
     public GameObject enemigo;
 
+    public GameObject otroEnemigo;
+
     //[SerializeField]
     //private float speed = 16;
 
@@ -38,6 +40,7 @@ public class ParaEnemigos : MonoBehaviour
             StopCoroutine(GenerarEnemigo());
             StopCoroutine(GenerarEnemigo2());
             StartCoroutine(GenerarEnemigo3());
+            StartCoroutine(GenerarOtroEnemigo());
         }
     }
 
@@ -79,6 +82,18 @@ public class ParaEnemigos : MonoBehaviour
             
             //esperar tiempo random
             yield return new WaitForSeconds(Random.Range(0.1f, 0.3f));
+
+        }
+    }
+
+    private IEnumerator GenerarOtroEnemigo(){
+        while(true){
+            Instantiate(otroEnemigo, new Vector3(Random.Range(-5, 5.5f), 
+                Random.Range(2,4), 0), 
+                enemigo.transform.rotation);
+            
+            //esperar tiempo random
+            yield return new WaitForSeconds(Random.Range(0.8f, 2.8f));
 
         }
     }

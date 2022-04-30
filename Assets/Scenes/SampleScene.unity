@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 16, y: 25}
+  m_AnchoredPosition: {x: 46.7, y: 25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36705758
@@ -241,6 +241,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f65d31e75e923504bac716aff3cbb2a3, type: 3}
   - {fileID: 8300000, guid: ace7cd09464089a46836775bf2b5409b, type: 3}
   - {fileID: 8300000, guid: dcee44a253143f6419ead1277e9d23b8, type: 3}
+  - {fileID: 8300000, guid: 9a662de38ee70c04d92484a8133f04d4, type: 3}
   clipsSecond:
   - {fileID: 8300000, guid: 3404b71ff02bba6449253e8298c40f24, type: 3}
   - {fileID: 8300000, guid: c813e2b00412b89419c48c0843736304, type: 3}
@@ -389,7 +390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -67, y: 15}
+  m_AnchoredPosition: {x: -41, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295581202
@@ -657,7 +658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397128874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.59, y: -2.97, z: 0}
+  m_LocalPosition: {x: -0.01, y: -2.97, z: 0}
   m_LocalScale: {x: 7.360626, y: 6.949729, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -727,6 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigo: {fileID: 5461402194242337137, guid: 35c48131258775640bab794a46e79681, type: 3}
+  otroEnemigo: {fileID: 2286796807011364852, guid: 56fd1c8a6c0e4254692afc7b95cf81ac, type: 3}
 --- !u!4 &611439234
 Transform:
   m_ObjectHideFlags: 0
@@ -855,7 +857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684876130
 GameObject:
@@ -1129,7 +1131,7 @@ RectTransform:
   - {fileID: 295581201}
   - {fileID: 36705757}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
